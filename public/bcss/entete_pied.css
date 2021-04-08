@@ -1,0 +1,14 @@
+.fond_entete{
+    background:linear-gradient(#0d3d4e,#29aadd) ;
+}
+.nav_centre{
+    
+}
+.footer{
+    position: relative;
+    height: 80px;
+    width: 100%;
+}
+.fond_footer{
+    background:linear-gradient(#29aadd,#0d3d4e) ;
+}

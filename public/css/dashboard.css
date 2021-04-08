@@ -1,0 +1,51 @@
+.droite {
+    margin-left: 625px;
+}
+
+.droite1 {
+    margin-left: 50px;
+}
+
+.droite2 {
+    margin-left: 50px;
+}
+
+.fond_entete {
+    background-color: #790303;
+}
+
+span {
+    font-size: x-large;
+}
+
+.top {
+    margin-top: 5px;
+}
+
+.back_ground {
+    background-color: #dddddd;
+}
+
+.text_color {
+    color: #790303;
+}
+
+.size {
+    font-size: 1.2em;
+}
+
+.featured-services .icon-box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.pied_fond {
+    height: 50px;
+    background-color: #790303;
+}
