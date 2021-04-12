@@ -19,18 +19,14 @@
             <div class="col-1"></div>
         </div>
     </div>
-    <div>
-        @if(Session::has('message'))
-        <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
-        @endif
-    </div>
+   
     <div class="container">
         <div class="row">
             <div class="wrapper fadeInDown">
                 <div id="formContent">
                     <!-- Tabs Titles -->
-                    <h2 class="active debut">Inscription /</h2>
-                    <a href="connexion"><h2 class="inactive underlineHover"> Connexion</h2></a>
+                    <h2 class="active debut">Inscription</h2>
+                    <!-- <a href="connexion"><h2 class="inactive underlineHover"> Connexion</h2></a> -->
                 
                     <!-- Icon -->
                     <div class="fadeIn first">

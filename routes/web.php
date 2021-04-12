@@ -23,7 +23,7 @@ Route::get('/inscription', function () {
 });
 Route::post('/inscription', 'inscriptionController@inscription')->name('inscription');
 
-Route::get('/login', 'LoginController@page_connexion');
+Route::get('/login', 'LoginController@page_connexion')->name('connexion');
 
 Route::post('/login_store', 'LoginController@login_store')->name('login.store');
 
@@ -33,5 +33,5 @@ Route::get('/connexion', function () {
     return view('connexion');
 });
 
-Route::get('/accueil', 'AccueilController@dashboard');
+Route::get('/accueil', 'AccueilController@dashboard')->name('dashboard');
 

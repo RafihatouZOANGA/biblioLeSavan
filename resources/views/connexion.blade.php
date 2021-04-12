@@ -20,6 +20,11 @@
         </div>
     </div>
     <div>
+        @if(Session::has('message'))
+        <p class="alert yes_inscrit {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+        @endif
+    </div>
+    <div>
         <h4 class="ddeConnexion">Veuillez-vous connecter svp.</h4>
     </div>
     <div class="container">

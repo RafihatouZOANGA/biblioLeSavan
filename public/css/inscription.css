@@ -97,6 +97,10 @@ h2 {
 
 /* TABS */
 
+.yes_inscrit{
+  width: 50%;
+  
+}
 h2.inactive {
   color: #cccccc;
   font-size: 1.2em;

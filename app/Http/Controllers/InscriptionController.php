@@ -21,9 +21,9 @@ class inscriptionController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-            Session::flash('message', 'vous avez ajouté un membre avec succes!');
+            Session::flash('message', 'Iscription réussie! Veuillez entrer vos identifiants pour vous connecter.');
             Session::flash('alert-class', 'alert-success text-center');
-            return redirect()->back();
+            return redirect()->route('connexion');
     }
     // public function inscription(Request $request){
 
