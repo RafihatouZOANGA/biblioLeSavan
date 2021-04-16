@@ -16,12 +16,12 @@ class inscriptionController extends Controller
             'password'=>['required', 'confirmed', 'min:3', 'max:6']
         ]);
 
-        Administrateur::create([
+        $admin = Administrateur::create([
             'username' => $data['username'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-            Session::flash('message', 'Iscription réussie! Veuillez entrer vos identifiants pour vous connecter.');
+            Session::flash('message', 'Inscription réussie! Veuillez entrer vos identifiants pour vous connecter.');
             Session::flash('alert-class', 'alert-success text-center');
             return redirect()->route('connexion');
     }

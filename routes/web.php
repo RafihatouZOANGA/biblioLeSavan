@@ -35,3 +35,18 @@ Route::get('/connexion', function () {
 
 Route::get('/accueil', 'AccueilController@dashboard')->name('dashboard');
 
+Route::get('/ajouterlivre', 'AjoutController@form')->name('ajout.livre');
+
+Route::post('/ajouterlivre', 'AjoutController@store')->name('ajout');
+
+Route::get('/liste', 'ListeController@index')->name('index.livre');
+
+Route::get('/modifier_page/{id}', 'UpdateController@update')->name('edit.livre');
+
+Route::get('/modifier/{id}', 'UpdateController@edit')->name('edit');
+
+Route::get('/supprimer_livre/{id}', 'UpdateController@delete')->name('delete.livre');
+
+Route::get('/classementLivre', function () {
+    return view('classementLivre');
+});

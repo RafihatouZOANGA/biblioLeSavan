@@ -1,16 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deconnexion</title>
-</head>
-<body>
-    <a href="{{route('logout')}}">deconnexion</a>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/" type="image/x-icon">
-    <link rel="stylesheet" href="/css/accueil.css">
+    <link rel="stylesheet" href="/css/ajoulivre.css">
     <link rel="stylesheet"  href="/css/bootstrap.min.css">
-    <title>Accueil</title>
+    <title>Ajout de livre</title>
 </head>
 <body>
     <header>
@@ -31,7 +18,7 @@
                     <div class="">
                         <a class="font-weight-bold text-white" href="#"> <span class="top">LeSAVAN</span> </a>
                     </div>
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{route('dashboard')}}">
                         <div>
                             <img src="images/Home_26px.png" weight="60px" height="40px" class="droite" alt="">
                             <h6>Accueil</h6>
@@ -48,13 +35,18 @@
         </nav>
     </header>
     <!-- corps-->
+
+        @if(Session::has('message'))
+        <p class="alert yes_inscrit {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+        @endif
+
     <div class="container-fluid">
         <div class="row">
         
             <div class="col-3">
-                <div class="bloc_gauche">
+                <div class="bloc_gauche dropdown-menu">
                     <div class="container">
-                        <a href="{{route('ajout')}}">
+                        <a class="dropdown-item active" href="#" aria-current="true">
                             <div class="row">
                                 <div class="col-2"></div>
                                 <div class="col-8 gauche_un">
@@ -64,7 +56,7 @@
                                 <div class="col-2"></div>
                             </div>
                         </a>
-                        <a href="{{route('index.livre')}}">
+                        <a href="">
                             <div class="row">
                                 <div class="col-2"></div>
                                 <div class="col-8 gauche_un">
@@ -87,14 +79,47 @@
                     </div>
                 </div>
             </div>
-            <div class="col-0"></div>
-            <div class="col-9">
+            <div class="col-1"></div>
+            <div class="col-8">
                 <div class="container">
                     <div class="row">
                     </div>
                     <div class="row">
                         <div class="bloc_droite">
-                            <img class="grandlivre" src="Images/grandlivre.jpg" width="" heigth="" alt="">
+                        <div class="container">
+                            <div class="row">
+                                <div class="wrapper fadeInDown">
+                                    <div id="formContent" class="">
+                                        <!-- Tabs Titles -->
+                                        <h2 class="active debut ">Ajouter un livre</h2>
+                                        <!-- <a href="connexion"><h2 class="inactive underlineHover"> Connexion</h2></a> -->
+                                    
+                                        <!-- Icon -->
+                                        <div class="fadeIn first">
+                                    
+                                        </div>
+
+                                        <!-- Login Form -->
+                                        <form action="{{route('ajout')}}" method="post">
+
+                                        {{ csrf_field() }}
+
+                                        <input type="text" class="fadeIn second" name="titre" placeholder="Titre du livre">
+                                        <input type="text" class="fadeIn second" name="nom_prenom_auteur" placeholder="Nom et prénom(s) de l'auteur">
+                                        <input type="date" class="fadeIn second" name="parution" placeholder="Date de parution">
+                                        <input type="text" class="fadeIn second" name="type" placeholder="Type">
+                                        <input type="text" class="fadeIn third" name="pays" placeholder="Pays">
+                                        <input type="submit" class=" fadeIn fourth" value="Ajouter">
+                                        </form>
+
+                                        <!-- Remind Passowrd 
+                                        <div id="formFooter">
+                                        <a class="underlineHover" href="#">Forgot Password?</a>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -102,7 +127,9 @@
             <div class="col-0"></div>
         </div>
     </div>
-
+    <div>
+        <a class="lien_liste" href="{{route('index.livre')}}"><h4>Voir la liste des livres ajoutés.</h4></a>
+    </div>
 
    <footer> <!-- footer-->
         <div class="container-fluid p-0">
